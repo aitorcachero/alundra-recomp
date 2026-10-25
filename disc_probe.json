@@ -1,0 +1,31 @@
+{
+  "cue_path": "G:\\Proyectos\\decomp-ps1\\alundra_disc\\Alundra.cue",
+  "cue_name": "Alundra.cue",
+  "bin_name": "Alundra.bin",
+  "track_count": 1,
+  "data_track_size": 606138624,
+  "data_track_md5": "39dd60ee7657f827d152b93ba5fda3e3",
+  "data_track_sha1": "6f0bb5212e122436dfd3e899e79bbf4fd611f4d9",
+  "data_track_crc32": "8c6abdbb",
+  "boot_exe": "SLES_012.58",
+  "serial": "SLES-01258",
+  "serial_exe": "SLES_012.58",
+  "volume_id": "PLAYSTATION",
+  "display_name": "Alundra",
+  "load_address": "0x80020000",
+  "entry_pc": "0x800360F4",
+  "text_size": "0x0012B000",
+  "stack_base": "0x801FFFF0",
+  "require_cue": true,
+  "required_disc_fp": "ebd6497f7ba1717abf5948a456c358f01825876987b1d1a018e0a4e79559caea",
+  "boot_exe_sha256": "fa2e322d3739dbcbc9f0849b10c9ac06d4789a928ecf473e47f52e7ceb845e44",
+  "seed_count": 541,
+  "warnings": [
+    "cue has only 1 TRACK \u2014 Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

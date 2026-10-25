@@ -1,0 +1,54 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Alundra"
+id = "SLES-01258"
+players = 1
+exe = "disc/SLES_012.58"
+disc = "G:\\Proyectos\\decomp-ps1\\alundra_disc\\Alundra.cue"
+load_address = "0x80020000"
+entry_pc = "0x800360F4"
+text_size = "0x0012B000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Alundra.bin"
+cue_name = "Alundra.cue"
+boot_exe = "SLES_012.58"
+known_sizes = [606138624]
+known_md5 = [
+  "39dd60ee7657f827d152b93ba5fda3e3",
+]
+known_sha1 = [
+  "6f0bb5212e122436dfd3e899e79bbf4fd611f4d9",
+]
+known_crc32 = [
+  "8c6abdbb",
+]
+
+[recompiler]
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+window_title = "Alundra Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "ebd6497f7ba1717abf5948a456c358f01825876987b1d1a018e0a4e79559caea"

@@ -1,0 +1,92 @@
+# Scaffold .gitignore for a PSXRecomp game repository (New Project Layout).
+# Aligned with docs/ci/templates/game.gitignore.
+
+# Build outputs
+/build/
+/build-*/
+/out/
+/.happypath/
+
+# generated/ is COMMITTED: releases ship the compiled game, and CI builds it
+# from the game C in this repo (psxrecomp_cli.py generate, then git add
+# generated). Never ignore it. Only the framework submodule's own generated/
+# (BIOS backends) stays untracked, and that is the submodule's rule.
+# psxrecomp_cli.py work areas (overlay toolchain download, static overlay
+# shard evidence -- the latter holds bytes read from the disc).
+/.cache/
+
+# Release packaging
+/release-stage/
+/dist/
+*.zip
+
+# Local PlayStation assets (never commit dumps / BIOS)
+/bios/
+/isos/
+/saves/
+/prepared_disc/
+/disc/
+.settings/
+
+# Disc / image / memcard formats
+*.bin
+*.cue
+*.iso
+*.img
+*.sub
+*.ccd
+*.mcd
+*.mcr
+*.chd
+*.car
+SCPH*.BIN
+
+# Local path/config stubs
+bios.cfg
+disc.cfg
+rom.cfg
+settings.toml
+
+# Local analysis scratch — GPU frame captures / parity dumps (the default
+# --out for tools/gpu_frame_*.py and gpu_parity.py) and asset rips pulled off
+# the disc. Multi-hundred-MB binaries land here and are rejected by GitHub's
+# 100 MB blob limit, and ripped disc content must never be committed at all.
+/analysis/
+
+# Ghidra / local analysis
+/ghidra/projects/
+*.gpr
+*.rep/
+*.lock
+*.lock~
+
+# Editor / cache
+.vs/
+.vscode/
+*.user
+*.log
+.DS_Store
+__pycache__/
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+
+# Runtime artifacts from psx-runtime launches
+psx_crash.txt
+psx_last_run_report.json
+psx_screenshot.bmp
+psx_freeze_heartbeat.json
+.psxrecomp_last_generate
+.psxrecomp_write_probe
+starvation_dump.jsonl
+
+# Diagnostic dumps (root-level) — keep catalog / probe trackable
+/*.json
+/*.bmp
+/*.png
+!/catalog_identity.json
+!/disc_probe.json
+# Multi-disc sets (update_disc_set.py): per-disc probes + the set verdict.
+!/disc_probe.*.json
+!/disc_set.json
+!/.recomp.json
