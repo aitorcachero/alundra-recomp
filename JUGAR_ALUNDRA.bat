@@ -1,8 +1,17 @@
 @echo off
-title Alundra Recompiled (HD-2D 16:9 4K)
-cd /d "%~dp0build-release"
+cd /d "%~dp0"
 
-:: Variables de optimizacion grafica y refresco
+:: Si existe el ejecutable nativo silencioso Alundra.exe, lanzarlo y cerrar cmd al instante
+if exist "Alundra.exe" (
+    start "" "Alundra.exe"
+    exit /b
+)
+if exist "build-release\Alundra.exe" (
+    start "" "build-release\Alundra.exe"
+    exit /b
+)
+
+:: En caso contrario, configurar variables y lanzar
 set PSX_RENDER_THREAD=1
 set PSX_PRESENT_THREAD=1
 set PSX_FRAME_GEN=1
@@ -11,13 +20,13 @@ set PSX_VSYNC=0
 set PSX_FPS_TELEMETRY=0
 set PSX_WS_FORCE_2D=1
 
-:: Iniciar el reescalador IA 100% invisible en segundo plano (sin ventana)
-if exist "%~dp0tools\auto_upscale_textures.py" (
-    start "" pythonw "%~dp0tools\auto_upscale_textures.py" --watch
+if exist "tools\auto_upscale_textures.py" (
+    start "" pythonw "tools\auto_upscale_textures.py" --watch
 )
 
-:: Ejecutar el juego directamente
-"Alundra_Recompiled.exe"
-
-:: Al salir, detener el proceso invisible de la IA
-taskkill /f /im pythonw.exe >nul 2>&1
+if exist "Alundra_Recompiled.exe" (
+    start "" "Alundra_Recompiled.exe"
+) else (
+    start "" "build-release\Alundra_Recompiled.exe"
+)
+exit /b
