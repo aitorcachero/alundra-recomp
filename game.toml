@@ -35,7 +35,7 @@ out_dir = "generated"
 strict = true
 
 [runtime]
-window_title = "Alundra Recompiled (4K HD-2D Widescreen)"
+window_title = "Alundra Recompiled (4K HD-2D)"
 memcard_dir = "saves"
 overlay_cache = true
 
@@ -65,10 +65,9 @@ frame_generation_method = "redraw"
 aspect_ratio = "16:9"
 
 [widescreen]
+native_wide = false
 full_2d = true
-auto_ui_squash = true
-auto_ui_anchor = "edges"
-clear_reveal = true
+auto_ui_squash = false
 
 [audio]
 buffer_ms = 60
