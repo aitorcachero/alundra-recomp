@@ -10,8 +10,9 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 WAIFU2X_EXE = SCRIPT_DIR / "waifu2x" / "waifu2x-ncnn-vulkan.exe"
 MODELS_DIR = SCRIPT_DIR / "waifu2x" / "models-cunet"
 
-DEFAULT_DUMPS = Path(r"G:\Proyectos\decomp-ps1\alundra-recomp\build-release\mods\texture-packs\SLES-01258\dumps")
-DEFAULT_REPLACEMENTS = Path(r"G:\Proyectos\decomp-ps1\alundra-recomp\build-release\mods\texture-packs\SLES-01258\replacements")
+PROJECT_ROOT = SCRIPT_DIR.parent
+DEFAULT_DUMPS = PROJECT_ROOT / "build-release" / "mods" / "texture-packs" / "SLES-01258" / "dumps"
+DEFAULT_REPLACEMENTS = PROJECT_ROOT / "build-release" / "mods" / "texture-packs" / "SLES-01258" / "replacements"
 
 def clean_alpha_edges(img_path):
     """Ensure crisp alpha boundaries without dark fringing."""

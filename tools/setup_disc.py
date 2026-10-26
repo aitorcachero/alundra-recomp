@@ -158,7 +158,7 @@ def main():
     print("=" * 65)
 
     base_dir = Path(__file__).resolve().parent.parent
-    disc_dir = base_dir / "alundra_disc"
+    disc_dir = base_dir / "disc"
     disc_dir.mkdir(parents=True, exist_ok=True)
     
     # 1. Check if user passed a file argument or search directory
@@ -169,9 +169,9 @@ def main():
             target_file = cand
 
     if not target_file:
-        # Search candidate files in root and disc_dir
+        # Search candidate files in disc, root, and legacy disc dirs
         extensions = [".pbp", ".cue", ".bin", ".iso", ".img", ".chd"]
-        search_dirs = [base_dir, disc_dir, base_dir / "disc"]
+        search_dirs = [disc_dir, base_dir, base_dir / "alundra_disc", base_dir.parent / "alundra_disc"]
         
         candidates = []
         for sdir in search_dirs:
@@ -243,8 +243,8 @@ def main():
     print("-" * 65)
 
     update_configs(base_dir, cue_file, version_info["serial"], version_info)
-    print("\n[✓] Configuración completada con éxito.")
-    print("    El juego está listo para iniciarse con JUGAR_ALUNDRA.bat.")
+    print("\n[OK] Configuracion completada con exito.")
+    print("    El juego esta listo para iniciarse con JUGAR_ALUNDRA.bat.")
 
 if __name__ == "__main__":
     main()
