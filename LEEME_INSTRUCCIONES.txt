@@ -1,0 +1,51 @@
+================================================================================
+  ALUNDRA RECOMPILED (4K HD-2D MASTER EDITION)
+  Port Nativo para PC (Windows x64) - Matrix Software / Sony Computer Entertainment
+================================================================================
+
+¡Bienvenido a la edicion definitiva remasterizada de Alundra para PC!
+
+CARACTERISTICAS DE ESTA VERSION:
+- Resolucion interna 4K UHD nativa con Supersampling 8K (SSAA 2.0x).
+- Shader HD-2D Crystal-Clear con realce de texturas pixel-art xBRZ/Bicubic,
+  curva tonal rica y cero distorsion.
+- Formato panoramico 16:9 y soporte 21:9 Ultra-Panoramico (Ultrawide) con interfaz
+  y menus protegidos contra estiramiento.
+- Rendimiento ultra fluido a 60 FPS sin tirones (microstuttering).
+- Lanzador nativo silencioso Alundra.exe compilado en C con autodeteccion
+  inteligente de aspecto de monitor (16:9 vs 21:9) y cero consolas negras.
+- 100% Legal y libre de derechos de autor (no incluye ISOs comerciales).
+
+--------------------------------------------------------------------------------
+COMO JUGAR EN 3 SIMPLES PASOS:
+--------------------------------------------------------------------------------
+
+1. Copia tu disco original de Alundra en formatos .BIN/.CUE, .ISO, .PBP o .CHD
+   en la carpeta 'alundra_disc\'.
+   
+2. Haz doble clic en 'PREPARAR_DISCO.bat' (detectara tu version y region en 1 segundo).
+
+3. ¡Listo! Para jugar tienes varias opciones:
+   - 'Alundra.exe' : Lanzador silencioso de maximo rendimiento (autodetecta monitor).
+   - 'JUGAR_ALUNDRA.bat' : Lanzador estandar 16:9 Panoramico 4K.
+   - 'JUGAR_ALUNDRA_21_9_ULTRAWIDE.bat' : Modo 21:9 Ultra-Panoramico.
+   - 'JUGAR_ALUNDRA_4K_43.bat' : Modo 4:3 Clasico Pixel-Perfect.
+
+--------------------------------------------------------------------------------
+CONTROLES POR DEFECTO:
+--------------------------------------------------------------------------------
+- Teclado:
+  * Flechas : Mover a Alundra
+  * Z : Saltar
+  * X : Atacar / Usar espada o herramienta
+  * C : Interactuar / Hablar / Coger objetos
+  * Enter : Pausa / Menu de Inventario
+
+- Mandos Xbox / PlayStation / DirectInput:
+  * Stick izquierdo / Cruceta : Mover a Alundra
+  * Boton A / Cruz : Saltar
+  * Boton X / Cuadrado : Atacar
+  * Boton B / Circulo : Interactuar / Accion
+  * Start : Menu / Inventario
+
+================================================================================

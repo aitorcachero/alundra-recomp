@@ -6,7 +6,7 @@ name = "Alundra"
 id = "SLES-01258"
 players = 1
 exe = "disc/SLES_012.58"
-disc = "G:/Proyectos/decomp-ps1/alundra-recomp/disc/Alundra.cue"
+disc = "disc/Alundra.cue"
 load_address = "0x80020000"
 entry_pc = "0x800360F4"
 text_size = "0x0012B000"
@@ -42,14 +42,14 @@ overlay_cache = true
 [video]
 renderer = "opengl"
 internal_resolution = "4k"
-supersample = 1.5
+supersample = 2.0
 resolution_reference_lines = 240
 match_display_max_lines = 2160
 antialiasing_mode = "fxaa_hq"
 texture_filtering = "xbr"
 texture_lod = "mipmap"
 anisotropic_filtering = 16
-bloom = 0.75
+bloom = 0.5
 dithering = "fine"
 accurate_blending = true
 fmv_chroma_smoothing = true
@@ -57,10 +57,10 @@ fmv_filter = "bicubic"
 render_thread = true
 present_thread = true
 vsync = "off"
-frame_interpolation = true
+frame_interpolation = false
 frame_interpolation_fps = 0
-offer_frame_interpolation = true
-frame_generation = true
+offer_frame_interpolation = false
+frame_generation = false
 frame_generation_method = "redraw"
 aspect_ratio = "16:9"
 
@@ -75,9 +75,4 @@ spu_hq = true
 
 [controller]
 default_mode = "digital"
-
-# Online mount gate: digests + track count + optional TOC fingerprint
-[netplay]
-require_cue = true
-required_tracks = 1
-required_disc_fp = "ebd6497f7ba1717abf5948a456c358f01825876987b1d1a018e0a4e79559caea"
+multitap_analog = true
